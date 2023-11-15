@@ -3,8 +3,9 @@ from sqlalchemy_serializer import SerializerMixin
 
 db = SQLAlchemy()
 
+
 class Newsletter(db.Model, SerializerMixin):
-    __tablename__ = 'newsletters'
+    __tablename__ = "newsletters"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String)
@@ -13,4 +14,4 @@ class Newsletter(db.Model, SerializerMixin):
     edited_at = db.Column(db.DateTime, onupdate=db.func.now())
 
     def __repr__(self):
-        return f'<Newsletter {self.title}, published at {self.published_at}.>'
+        return f"<Newsletter {self.title}, published at {self.published_at}.>"
